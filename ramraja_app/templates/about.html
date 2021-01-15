@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+{% include 'header.html'%}
+<br><br><br><br>
+<section id="about">
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-5 col-md-6">
+            
+          <div class="about-img">
+            <img src="{%static 'img/about-img.jpg' %}" alt="">
+          </div>
+        </div>
+
+        <div class="col-lg-7 col-md-6">
+          <div class="about-content">
+            <h2>About Us</h2>
+            <!-- <h3>Odio sed id eos et laboriosam consequatur eos earum soluta.</h3> -->
+            <p>Based on “Ideas” to build next Gen org. and data driven employee “Insights”, deliver “Impact” and create “Inspired” workforce.
+
+               . We create solutions that are agile and cost effective based on organisation needs.
+                
+                Shaping the new workforce – Customized Solutions based on Talent Strategy and Post Disruption. Customizing solutions on organisational demands and budgets.</p>
+            <ul>
+              <li><i class="ion-android-checkmark-circle"></i>We empower organisations via Technology Innovations and thus impact Talent Attraction, Employee Experience and Productivity.</li>
+              <li><i class="ion-android-checkmark-circle"></i> Our success is determined by ROI for the organisation and delta created in the HR Blueprint post our partnership.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%include 'footer.html' %}
+
+  </section>
+  {% endblock body %}

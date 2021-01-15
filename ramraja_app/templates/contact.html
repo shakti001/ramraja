@@ -1,0 +1,126 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+{% include 'header.html'%}
+<br><br>
+<footer id="footer" class="section-bg">
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                  <div class="footer-info">
+                    <h3>RamRaja </h3>
+                    <p> As the starting point for each business we take care of brining your business online. Got a food delivery or other ecommerce business idea ? we are here to help.</p>
+                  </div>
+
+                  <!-- <div class="footer-newsletter">
+                    <h4>Our Newsletter</h4>
+                    <p>                        .</p>
+                    <form action="" method="post">
+                      <input type="email" name="email"><input type="submit"  value="Subscribe">
+                    </form>
+                  </div> -->
+
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                      <li><a href="/">Home</a></li>
+                      <li><a href="/about">About us</a></li>
+                      <li><a href="/services">Services</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <p>
+                      A73 Vila ARG PURAM  <br>
+                       kanota Jaipur , Rajasthan <br>
+                      india <br>
+                      <strong>Phone:</strong> <br>
+                      <strong>Email:</strong><br>
+                    </p>
+                  </div>
+
+                  <div class="social-links">
+                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                  </div>
+
+                </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            {% csrf_token %}
+
+            <div class="form">
+              
+              <h4>Get in touch to know how we can colaborate together.</h4>
+              <p>We are just one email/call away from you. You are most welcome to visit one of our offices. We would be very happy to meet you.</p>
+              <BR></BR>
+              {% for message in messages %}
+               <h5 class="alert alert-primary">{{message}}</h5>
+                 {% endfor%}
+
+
+            <form action="" action="#" method="POST">
+              {% csrf_token %}
+       
+              <input type="text"   name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+               <br><input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+              <br><input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <br><textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <button type="submit" class="site-btn login-btn">send  message </button>
+            
+            </form>
+              <!-- <form action="#" method="POST" role="form" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+
+                
+
+                <button type="submit" class="site-btn login-btn">send  message </button>
+              </form> -->
+            </div>
+
+          </div>
+
+          
+
+        </div>
+
+      </div>
+    </div>
+
+  {% include 'footer.html' %}
+  </footer>
+  {% endblock body %}
